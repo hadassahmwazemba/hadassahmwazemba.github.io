@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hadassah Mwazemba — Computer Science @ Wellesley College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">Hadassah Mwazemba</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+    <li><a href="#work-experience" onclick="closeMenu()">Experience</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+<div class="nav-mobile-overlay" id="nav-overlay" onclick="closeMenu()"></div>
+ 
+<canvas id="hero-canvas"></canvas>
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT: PHOTO -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-glow"></div>
+      <div class="hero-photo">
+        <img src="assets/hadassah_mwazemba_image.png" alt="Hadassah Mwazemba">
+      </div>
+    </div>
+
+    <!-- RIGHT: TEXT -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">Computer Science · Wellesley College</p>
+      <h1 class="hero-name">Hadassah Mwazemba.</h1>
+      <p class="hero-tagline">Machine Learning, AI, Software Engineering, and Social Computing Research.</p>
+      <p class="hero-bio">I'm a Computer Science student at Wellesley College passionate about artificial intelligence, software engineering, and social computing research. I build scalable data pipelines, develop machine learning applications, and analyze online communities to better understand how people interact with information and technology.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View my work →</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+      <!-- Stats rendered by script.js from HERO.stats in content.js -->
+      <div class="hero-stats" id="hero-stats"></div>
+      <!-- Status card rendered by script.js from HERO.status in content.js -->
+      <div class="hero-status-card">
+        <div class="hero-status-header">
+          <span class="hero-status-dot"></span>
+          <span class="hero-status-title">Current Status</span>
+        </div>
+        <div id="hero-status-rows"></div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container-wide">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <!-- Paragraphs rendered by script.js from ABOUT in content.js -->
+      <div class="about-text" id="about-text"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container-wide">
+    <h2 class="section-title">Projects</h2>
+    <!-- Cards rendered by script.js from PROJECTS in content.js -->
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section id="work-experience">
+  <div class="container-wide">
+    <h2 class="section-title">Work Experience</h2>
+    <!-- Cards rendered by script.js from WORK_EXPERIENCE in content.js -->
+    <div class="inv-grid" id="work-grid"></div>
+  </div>
+</section>
+ 
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container-wide">
+    <h2 class="section-title">Skills</h2>
+    <!-- Pills rendered by script.js from SKILLS in content.js -->
+    <div class="skills-grid" id="skills-grid"></div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container-wide">
+    <div class="contact-inner">
+      <!-- All rendered by script.js from CONTACT in content.js -->
+      <h2 class="section-title" id="contact-heading"></h2>
+      <p class="section-sub" id="contact-sub"></p>
+      <div class="contact-press" id="contact-press"></div>
+      <div class="contact-links" id="contact-links"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Hadassah Mwazemba</p>
+  <p>Computer Science · Wellesley College ·Wellesley, MA</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- FLOATING UPDATES BUBBLE -->
+<div class="fab-wrap">
+  <div class="fab-panel" id="fabPanel">
+    <div class="fab-panel-header">
+      <span class="fab-panel-title">Updates</span>
+      <button class="fab-panel-close" onclick="toggleFab()">&#x2715;</button>
+    </div>
+    <!-- Feed rendered by script.js from UPDATES in content.js -->
+    <div class="fab-panel-feed" id="fab-feed"></div>
+  </div>
+  <button class="fab-btn" id="fabBtn" onclick="toggleFab()" aria-label="Updates">
+    <span class="fab-btn-dot"></span>
+    <span class="fab-btn-label">Updates</span>
+  </button>
+</div>
+ 
+<!-- content.js must load BEFORE script.js -->
+<script src="assets/js/content.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
